@@ -147,8 +147,8 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="age" />
+                    <span>Age</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +156,13 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let age = parseInt(document.getElementById("age").value)
+
+                        if (age >= 18 && age <= 67) {
+                            inner.innerHTML = `You can donate blood`
+                        } else {
+                            inner.innerHTML = `You can't donate blood`
+                        }
                     }
                 </script>
                <!-- 12. Para doar sangue é necessário ter entre 18 e 67 anos. Faça um
