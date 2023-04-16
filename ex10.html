@@ -147,8 +147,12 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="height" />
+                    <span>Height</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="gender" />
+                    <span>Gender m/f</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +160,16 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let height = parseInt(document.getElementById("height").value)
+                        let gender = document.getElementById("gender").value
+                        let weightM = (72.7 * height) - 58
+                        let weightF = (62.1 * height) - 44.7
+
+                        if(gender == "M") {
+                            inner.innerHTML = `Your ideal weight would be: ${weightM}`
+                        } else {
+                            inner.innerHTML = `Your ideal weight would be: ${weightF}`
+                        }
                     }
                 </script>
                 <!-- 10. Tendo como entrada a altura e o sexo (codificado da seguinte
