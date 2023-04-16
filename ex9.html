@@ -147,8 +147,8 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="number" />
+                    <span>Number</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +156,20 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let num = parseFloat(document.getElementById("number").value)
+                        var ehPrimo = true;
+
+                        for (var i = 2; i < num; i++) {
+                        if (num % i == 0) {
+                            ehPrimo = false;
+                        }
+                        }
+
+                        if (ehPrimo) {
+                            inner.innerHTML = `${num} is prime number.`
+                        } else {
+                            inner.innerHTML = `${num} is not prime number.`
+                        }
                     }
                 </script>
                <!-- 9. Informe um valor a uma variável e imprima no console se o número
