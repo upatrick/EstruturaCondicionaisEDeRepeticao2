@@ -146,17 +146,21 @@
                 </style>
             </head>
             <body>
-                <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
-                </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
-                    <span>Go through</span><i></i>
+                    <span>Add 30 odd numbers</span><i></i>
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let numbers = ""
+
+                        for(let i = 1; i <= 60; i++) {
+                            if(i %2 != 0) {
+                                numbers += i + ", "
+                            }
+                        }
+
+                        inner.innerHTML = `${numbers.slice(0, -2)}.`
                     }
                 </script>
                 <!-- 6. Insira no html 30 ( trinta ) números ímpares. -->
