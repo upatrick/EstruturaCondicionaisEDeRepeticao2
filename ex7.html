@@ -146,17 +146,21 @@
                 </style>
             </head>
             <body>
-                <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
-                </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
-                <button onclick="percorrer()" style="--clr: #1e9bff">
-                    <span>Go through</span><i></i>
+                <button onclick="calc()" style="--clr: #1e9bff">
+                    <span>Calculate</span><i></i>
                 </button>
                 <script>
-                    function percorrer() {
-                        
+                    function calc() {
+                        let num = 10;
+                        let sum = 0;
+
+                        do {
+                        sum += num;
+                        num++;
+                        } while (num <= 100);
+
+                        inner.innerHTML = `<h3>The sum of numbers from 10 to 100 is ${sum}`
                     }
                 </script>
                 <!-- 7. Utilizando do...while, imprima na tela a soma de todos os números
