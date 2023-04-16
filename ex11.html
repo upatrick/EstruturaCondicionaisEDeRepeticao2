@@ -147,8 +147,8 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="value" />
+                    <span>Work shift m/v/n</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +156,22 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let workShift = document.getElementById("value").value
+
+                        switch (workShift) {
+                            case "M":
+                                inner.innerHTML = `<h3>Good morning!`;
+                                break;
+                            case "V":
+                                inner.innerHTML = `<h3>Good afternoon!`;
+                                break;
+                            case "N":
+                                inner.innerHTML = `<h3>Goodnight!`;
+                                break;
+                            default:
+                                inner.innerHTML = `<h3>Invalid value!`;
+                                break;
+                        }
                     }
                 </script>
                 <!-- 11. Utilizando Switch, faça um programa que pergunte em que turno
