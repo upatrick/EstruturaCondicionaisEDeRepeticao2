@@ -147,7 +147,7 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
+                    <input type="text" required="required" id="salary" />
                     <span>Name</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
@@ -156,7 +156,13 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let salary = parseFloat(document.getElementById("salary").value)
+
+                        if(salary <= 1903.98) {
+                            inner.innerHTML = `ISENTO DE IR`
+                        } else {
+                            inner.innerHTML = `TRIBUTADO NO IR`
+                        }
                     }
                 </script>
                 <!-- 8. Crie uma variável para armazenar o salário do usuário e atribua um
