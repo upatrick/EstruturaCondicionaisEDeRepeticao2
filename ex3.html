@@ -147,8 +147,8 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="number" />
+                    <span>Number 1 to 7</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +156,25 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let number = parseInt(document.getElementById("number").value)
+
+                        if(number == 1) {
+                            inner.innerHTML = `<h3>Sunday`
+                        } else if (number == 2) {
+                            inner.innerHTML = `<h3>Monday`
+                        } else if (number == 3) {
+                            inner.innerHTML = `<h3>Tuesday`
+                        } else if (number == 4) {
+                            inner.innerHTML = `<h3>Wednesday`
+                        } else if (number == 5) {
+                            inner.innerHTML = `<h3><h3>Thursday`
+                        } else if (number == 6) {
+                            inner.innerHTML = `<h3>Friday`
+                        } else if (number == 7) {
+                            inner.innerHTML = `<h3>Saturday`
+                        } else {
+                            inner.innerHTML = `<h3>Invalid number!`
+                        }
                     }
                 </script>
                 <!-- 3. Utilizando o IF, ELSE, ELSE IF crie uma estrutura para receber um
