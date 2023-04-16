@@ -147,8 +147,8 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="number" />
+                    <span>Number</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +156,34 @@
                 </button>
                 <script>
                     function percorrer() {
+                        let day = parseInt(document.getElementById("number").value);
                         
+                        switch (day) {
+                            case 1:
+                                inner.innerHTML = `<h3>Sunday`;
+                                break;
+                            case 2:
+                                inner.innerHTML = `<h3>Monday`;
+                                break;
+                            case 3:
+                                inner.innerHTML = `<h3>Tuesday`;
+                                break;
+                            case 4:
+                                inner.innerHTML = `<h3>Wednesday`;
+                                break;
+                            case 5:
+                                inner.innerHTML = `<h3>Thursday`;
+                                break;
+                            case 6:
+                                inner.innerHTML = `<h3>Friday`;
+                                break;
+                            case 7:
+                                inner.innerHTML = `<h3>Saturday`;
+                                break;
+                            default:
+                                inner.innerHTML = `<h3>Invalid number!`;
+                                break;
+                        }
                     }
                 </script>
                 <!-- 4. Reescreva o exercício 3, utilizando apenas o SWITCH. -->
