@@ -147,8 +147,20 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="totalV" />
+                    <span>Total Voters</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="whiteV" />
+                    <span>White Votes</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="nullV" />
+                    <span>Null votes</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="validV" />
+                    <span>Valid Votes</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +168,22 @@
                 </button>
                 <script>
                     function percorrer() {
+                        let totalVoters = parseInt(document.getElementById("totalV").value)
+                        let whiteVotes = parseInt(document.getElementById("whiteV").value)
+                        let nullVotes = parseInt(document.getElementById("nullV").value)
+                        let validVotes = parseInt(document.getElementById("validV").value)
+
+                        if (whiteVotes + nullVotes + validVotes > totalVoters) {
+                            inner.innerHTML = `<h3>Invalid Values!`
+                        } else {
+                        let percentageWhite = (whiteVotes / totalVoters) * 100;
+                        let percentageNull = (nullVotes / totalVoters) * 100;
+                        let percentageValid = (validVotes / totalVoters) * 100;
                         
+                        inner.innerHTML = `<h3>Percentage white is: ${percentageWhite.toFixed(2)}! <br>
+                            Percentage null is: ${percentageNull.toFixed(2)}! <br>
+                            Percentage valid is: ${percentageValid.toFixed(2)}!`
+                        }
                     }
                 </script>
                 <!-- 17. Escreva um algoritmo que armazene o número total de eleitores de
