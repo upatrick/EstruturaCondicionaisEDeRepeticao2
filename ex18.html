@@ -147,8 +147,12 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="value" />
+                    <span>Value</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="numInstallments" />
+                    <span>Num Installments</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +160,27 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let precoTabela = parseFloat(document.getElementById("value").value)
+                        let numParcelas = parseInt(document.getElementById("numInstallments").value)
+                        let valorFinal = 0
+
+                        if (numParcelas == 1) {
+                            valorFinal = precoTabela * 0.975;
+                            inner.innerHTML = `<h3>Final value: R$${valorFinal.toFixed(2)}!`
+                        } else if (numParcelas >= 2 && numParcelas <= 5) {
+                            valorFinal = precoTabela;
+                            inner.innerHTML = `<h3>Installments final of ${numParcelas} value of installments R$${valorFinal.toFixed(2)}!`
+                        } else if (numParcelas >= 6 && numParcelas <= 10) {
+                            valorFinal = precoTabela * 1.06;
+                            let valorParcela = valorFinal / numParcelas;
+                            inner.innerHTML = `<h3>Installments final of ${numParcelas} value of installments R$${valorFinal.toFixed(2)}!`
+                        } else if (numParcelas >= 11 && numParcelas <= 15) {
+                            valorFinal = precoTabela * 1.13;
+                            let valorParcela = valorFinal / numParcelas;
+                            inner.innerHTML = `<h3>Installments final of ${numParcelas} value of installments R$${valorFinal.toFixed(2)}!`
+                        } else {
+                            inner.innerHTML = `<h3>Invalid value!`
+                        }
                     }
                 </script>
                 <!-- 18. Uma loja de eletrodomésticos estabeleceu as seguintes
