@@ -147,8 +147,8 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="num" />
+                    <span>Number</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +156,13 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let num = parseInt(document.getElementById("num").value)
+                        for(let i = 1; i <= num; i++){
+                            if(i %2 !== 0) {
+                                inner.innerHTML += `${i}, `
+                            } 
+                            console.log(typeof i)
+                        }
                     }
                 </script>
                 <!-- 13. Faça um algoritmo que armazene um número e imprima os
