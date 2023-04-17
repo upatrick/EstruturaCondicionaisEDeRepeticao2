@@ -147,8 +147,8 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="num" />
+                    <span>Number</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +156,12 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let num = parseInt(document.getElementById("num").value)
+
+                        while(num < 166) {
+                            num = num * 3
+                            inner.innerHTML = `The last value obtained was: ${num}.`
+                        }
                     }
                 </script>
                 <!-- 14. Leia um número, utilizando WHILE multiplique este número por 3
