@@ -147,8 +147,8 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="year" />
+                    <span>Year</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +156,14 @@
                 </button>
                 <script>
                     function percorrer() {
+                        let year = parseInt(document.getElementById("year").value)
+                        let ano = 2023 - year
                         
+                        if(ano >= 18){
+                            inner.innerHTML = `<h3>Can vote`
+                        } else {
+                            inner.innerHTML = `<h3>Can't vote`
+                        }
                     }
                 </script>
                 <!-- 16. Escreva um algoritmo que armazene o ano atual e o ano de
