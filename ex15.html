@@ -147,8 +147,16 @@
             </head>
             <body>
                 <div class="inputBox">
-                    <input type="text" required="required" id="name" />
-                    <span>Name</span>
+                    <input type="text" required="required" id="a" />
+                    <span>Side a</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="b" />
+                    <span>Side b</span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required" id="c" />
+                    <span>Side c</span>
                 </div>
                 <div class="inputBox" id="inner" style="color: azure;"></div>
                 <button onclick="percorrer()" style="--clr: #1e9bff">
@@ -156,7 +164,21 @@
                 </button>
                 <script>
                     function percorrer() {
-                        
+                        let a = parseInt(document.getElementById("a").value)
+                        let b = parseInt(document.getElementById("b").value)
+                        let c = parseInt(document.getElementById("c").value)
+
+                        if (a < b + c && b < a + c && c < a + b) {
+                        if (a == b && b == c) {
+                            inner.innerHTML = `<h3>equilátero`
+                        } else if (a == b || a == c || b == c) {
+                            inner.innerHTML = `<h3>isósceles`
+                        } else {
+                            inner.innerHTML = `<h3>escaleno`
+                        }
+                        } else {
+                            inner.innerHTML = `<h3>Invalid values!`
+                        }
                     }
                 </script>
                 <!-- 15. Crie um algoritmo que armazene três valores, para cada um dos
